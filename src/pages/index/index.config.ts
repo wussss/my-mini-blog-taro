@@ -1,3 +1,3 @@
 export default {
-  navigationBarTitleText: 'TodoList'
+  navigationBarTitleText: '首页'
 }
