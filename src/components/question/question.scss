@@ -1,0 +1,41 @@
+@import "../../base.scss";
+.dialog {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.3);
+  .question {
+    background: white;
+    /* prettier-ignore */
+    border-radius: 5PX;
+    width: 90%;
+    /* prettier-ignore */
+    margin: 60PX auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5p;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    color: $element-color;
+    .question-item {
+      margin: 10px;
+    }
+    .bottom-button {
+      display: flex;
+      flex-direction: row;
+      margin: 10px;
+      .cancel {
+        /* prettier-ignore */
+        margin-right: 5PX;
+      }
+      .OK {
+        background: $primary-color;
+        color: white;
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+    }
+  }
+}

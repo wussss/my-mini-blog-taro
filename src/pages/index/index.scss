@@ -1,4 +1,25 @@
+@import "../../base.scss";
 .index {
   display: flex;
   flex-direction: column;
+  background-color: #f3eff3;
+  height: 100%;
+  .title {
+    font-size: 28px;
+    margin: 5px auto;
+    color:$element-color;
+  }
+  .button{
+    position:fixed;
+    bottom:0px;
+    width:100%;
+    background:$primary-color;
+    color:white;
+    border-radius:0;
+    z-index:3;
+  }
+  .button_back{
+    background: $primary-color;
+    color:white;
+  }
 }

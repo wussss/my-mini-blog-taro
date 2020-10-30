@@ -5,14 +5,12 @@ import { View, Text, Input, Button } from "@tarojs/components";
 import "./todolist.scss";
 import useInputEvent from "../../hooks/useInputEvent";
 
-interface IProps {
-  list: string[];
-}
-const TodoList: Taro.FC<IProps> = ({ list,children}) => {
+
+const TodoList: Taro.FC = () => {
   const { inputValue: todo, onInputEvent, setValue: setTodo } = useInputEvent(
     ""
   );
-  const [newList, setList] = useState(list);
+  const [newList, setList] = useState<string[]>([]);
   const onSubmit = () => {
     setList([...newList, todo]);
     setTodo("");
@@ -20,7 +18,6 @@ const TodoList: Taro.FC<IProps> = ({ list,children}) => {
   const onDelete = (index: number) => {
     newList.splice(index, 1);
     setList([...newList]);
-    console.log(newList, list);
   };
   return (
     <View className="todolist">
@@ -32,7 +29,7 @@ const TodoList: Taro.FC<IProps> = ({ list,children}) => {
           onInput={onInputEvent}
           value={todo}
         />
-        <Button onClick={onSubmit} className="button" size="mini">
+        <Button onClick={onSubmit} className="todo-button" size="mini">
           Sumbit
         </Button>
       </View>
@@ -46,7 +43,6 @@ const TodoList: Taro.FC<IProps> = ({ list,children}) => {
           >{`${index + 1}.${item}`}</Text>
         ))}
       </View>
-      {children}
     </View>
   );
 };

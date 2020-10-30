@@ -1,19 +1,37 @@
 /* eslint-disable jsx-quotes */
 import React, { useState } from "react";
 import Taro from "@tarojs/taro";
-import { View, Text, Image ,Button} from "@tarojs/components";
+import classnames from "classnames";
+import { View, Text, Button } from "@tarojs/components";
+import useToggle from "../../hooks/useToggle";
+import Question from "../../components/question/question";
+
 import "./index.scss";
-import TodoList from "../../components/todolist/todolist";
-import Img from "../../statics/test.png";
 
 const Index: Taro.FC = () => {
-  const [list] = useState(["示例1", "示例2"]);
+  const { flag: isVisible, setFlag, onToggle } = useToggle(false);
+  const [question, setInfo] = useState("");
+  const onClose = () => setFlag(false);
+  const onRecieve = (newInfo) => {
+    setInfo(newInfo);
+    Taro.showToast({ title: "问题提交成功" });
+    console.log(newInfo)
+  };
   return (
-    <View>
-      <Text>首页</Text>;<Image src={Img}></Image>
-      <TodoList list={list}>
-        <Text>测试一下</Text>
-      </TodoList>
+    <View className="index">
+      <Text className="title">Taro问答实例</Text>
+      <View>{question}</View>
+      {isVisible && <Question onClose={onClose} onRecieve={onRecieve} />}
+      <Button
+        className={classnames({
+          button: true,
+          button_back: isVisible,
+        })}
+        size="mini"
+        onClick={onToggle}
+      >
+        {isVisible ? "返回" : "提问"}
+      </Button>
     </View>
   );
 };

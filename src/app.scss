@@ -1,0 +1,25 @@
+@import "./base.scss";
+page {
+  height: 100%;
+}
+Input {
+  height: 30PX;
+  width: 80%;
+  border: 1px solid $primary-color;
+  border-radius: 5px;
+  text-indent: 5px;
+  ::placeholder {
+    color: #d9d9d9;
+  }
+}
+Textarea {
+  height: 50PX;
+  width: 80%;
+  border: 1px solid $primary-color;
+  border-radius: 5px;
+  text-indent: 5px;
+  ::placeholder {
+    color: #d9d9d9;
+  }
+}
+
