@@ -1,6 +1,6 @@
 /* eslint-disable jsx-quotes */
 import React from "react";
-import Taro, { redirectTo } from "@tarojs/taro";
+import Taro from "@tarojs/taro";
 import { View, Input, Textarea, Text, Button } from "@tarojs/components";
 import "./question.scss";
 import useInputEvent from "../../hooks/useInputEvent";
