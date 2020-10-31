@@ -1,0 +1,30 @@
+{
+  "id": "2170998",
+  "name": "myApp",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "6400631",
+      "name": "赞",
+      "font_class": "weibiaoti--",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "10469989",
+      "name": "不喜欢",
+      "font_class": "dislike",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "13646185",
+      "name": "喜欢",
+      "font_class": "xihuan",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    }
+  ]
+}

@@ -24,12 +24,21 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      Text{
+      .contont-before {
+        /* prettier-ignore */
         font-size: 28PX;
       }
-      View {
+      .content {
         /* prettier-ignore */
         margin-left:5PX;
+        margin-right: 5px;
+      }
+      .icon-list {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        /* prettier-ignore */
+        margin-left:10PX;
       }
     }
   }
