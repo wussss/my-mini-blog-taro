@@ -1,7 +1,7 @@
 /* eslint-disable jsx-quotes */
 import React from "react";
 import Taro from "@tarojs/taro";
-import { View, Input, Textarea, Text, Button } from "@tarojs/components";
+import { View, Textarea, Text, Button } from "@tarojs/components";
 import "./question.scss";
 import useInputEvent from "../../hooks/useInputEvent";
 
@@ -10,24 +10,26 @@ interface IProps {
   onRecieve: (string) => void;
 }
 const Question: Taro.FC<IProps> = ({ onClose, onRecieve }) => {
-  const { inputValue: question, onInputEvent } = useInputEvent("");
-  const {
-    inputValue: phoneNumber,
-    onInputEvent: onPhoneNumber,
-  } = useInputEvent("");
+  const { inputValue: question, onInputEvent: onInputQuestion } = useInputEvent(
+    ""
+  );
+  // const {
+  //   inputValue: phoneNumber,
+  //   onInputEvent: onPhoneNumber,
+  // } = useInputEvent("");
   const onSubmit = () => {
     //数据非空校验
-    if (!question || !phoneNumber) {
-      Taro.showToast({ title: "请输入问题描述或手机号", icon: "none" });
+    if (!question) {
+      Taro.showToast({ title: "请输入问题描述", icon: "none" });
       return;
     }
-    if (phoneNumber.length !== 11) {
-      Taro.showToast({ title: "请输入正确的手机号", icon: "none" });
-      return;
-    }
+    // if (phoneNumber.length !== 11) {
+    //   Taro.showToast({ title: "请输入正确的手机号", icon: "none" });
+    //   return;
+    // }
     //调用父组件的方法向父组件传值
     onRecieve(question);
-    onClose()
+    onClose();
   };
   return (
     <View className="dialog">
@@ -37,11 +39,12 @@ const Question: Taro.FC<IProps> = ({ onClose, onRecieve }) => {
           <Textarea
             focus
             value={question}
-            onInput={onInputEvent}
+            onInput={onInputQuestion}
             placeholder="请详细描述您的问题"
+            className="textarea"
           />
         </View>
-        <View className="question-item">
+        {/* <View className="question-item">
           <Text>手机号:</Text>
           <Input
             value={phoneNumber}
@@ -49,7 +52,7 @@ const Question: Taro.FC<IProps> = ({ onClose, onRecieve }) => {
             type="number"
             placeholder="请输入您的手机号"
           />
-        </View>
+        </View> */}
 
         <View className="bottom-button">
           <Button size="mini" className="cancel" onClick={onClose}>
