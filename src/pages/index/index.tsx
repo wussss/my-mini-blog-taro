@@ -71,11 +71,14 @@ const Index: Taro.FC = () => {
     setInfo([...newList]);
     setStore("questions", [...newList]);
   };
+  const sortNumber = (a: IQuestion, b: IQuestion) => {
+   return b.like-a.like
+  };//按数字从大到小排序
   return (
     <View className="index">
       <Text className="title">Taro问答实例</Text>
       <View className="list">
-        {questions.map((item, index) => {
+        {questions.sort(sortNumber).map((item, index) => {
           return (
             <View key={item.id} className="list-item">
               <Text className="contont-before">·</Text>

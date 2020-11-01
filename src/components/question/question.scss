@@ -29,16 +29,24 @@
     .bottom-button {
       display: flex;
       flex-direction: row;
-      margin: 10px;
+      /* prettier-ignore */
+      margin: 10PX;
+      align-items: center;
       .cancel {
         /* prettier-ignore */
         margin-right: 5PX;
+        /* prettier-ignore */
+        height: 28.75PX;
+        width: 80PX;
       }
       .OK {
         background: $primary-color;
         color: white;
-        margin-left: 5px;
-        margin-right: 5px;
+        /* prettier-ignore */
+        margin-left: 5PX;
+        margin-right: 5PX;
+        height: 28.75PX;
+        width: 80PX;
       }
     }
   }
