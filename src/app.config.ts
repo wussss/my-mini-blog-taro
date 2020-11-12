@@ -1,6 +1,7 @@
 export default {
   pages: [
     'pages/index/index',//默认首页
+    'pages/TodoList/index',
   ],
   window: {
     backgroundTextStyle: 'light',

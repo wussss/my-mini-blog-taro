@@ -72,10 +72,22 @@ const Index: Taro.FC = () => {
     setStore("questions", [...newList]);
   };
   const sortNumber = (a: IQuestion, b: IQuestion) => {
-   return b.like-a.like
-  };//按数字从大到小排序
+    return b.like - a.like;
+  }; //按数字从大到小排序
   return (
     <View className="index">
+      <Text
+        style={{
+          color: " #4d344d",
+          fontSize: "14PX",
+          textDecoration: "underline",
+        }}
+        onClick={() => {
+          Taro.navigateTo({ url: "../TodoList/index" });
+        }}
+      >
+        查看TodolList
+      </Text>
       <Text className="title">Taro问答实例</Text>
       <View className="list">
         {questions.sort(sortNumber).map((item, index) => {

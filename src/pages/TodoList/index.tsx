@@ -2,9 +2,8 @@
 import React, { useState } from "react";
 import Taro from "@tarojs/taro";
 import { View, Text, Input, Button } from "@tarojs/components";
-import "./todolist.scss";
+import "./index.scss";
 import useInputEvent from "../../hooks/useInputEvent";
-
 
 const TodoList: Taro.FC = () => {
   const { inputValue: todo, onInputEvent, setValue: setTodo } = useInputEvent(
@@ -21,6 +20,18 @@ const TodoList: Taro.FC = () => {
   };
   return (
     <View className="todolist">
+      <Text
+        style={{
+          color: " #4d344d",
+          fontSize: "14PX",
+          textDecoration: "underline",
+        }}
+        onClick={() => {
+          Taro.navigateBack({ delta: 1 });
+        }}
+      >
+        查看问答
+      </Text>
       <View className="submit">
         <Input
           type="text"
